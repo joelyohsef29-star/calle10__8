@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aguachiles & Tostielotes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #39c540;
+            --accent: #76ff03;
+            --light: #e8f5e9;
+            --dark: #1b5e20;
+            --orange: #ff6d00;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f8f5;
+            color: #212121;
+            line-height: 1.6;
+        }
+
+        /* BANNER */
+        .demo-badge {
+            background: var(--orange);
+            color: #fff;
+            text-align: center;
+            padding: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            color: #fff;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .logo span { color: var(--accent); }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(27, 94, 32, 0.85), rgba(0, 0, 0, 0.7)), 
+                        url('watermarked_img_14076442733153651628.jpg') center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 5rem 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            color: #e0f2f1;
+        }
+
+        .btn-main {
+            background: var(--accent);
+            color: var(--dark);
+            padding: 12px 28px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .btn-main:hover {
+            transform: scale(1.05);
+            background: #b2ff59;
+        }
+
+        /* SECCIONES Y GRID */
+        .section-title {
+            text-align: center;
+            margin: 3rem 0 1rem;
+            color: var(--dark);
+            font-size: 2rem;
+        }
+
+        .section-title::after {
+            content: "🌶️ 🥑 🌶️";
+            display: block;
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+
+        .menu-container, .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        /* TARJETAS DE MENÚ */
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            border: 2px solid #e0e0e0;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content { padding: 1.2rem; }
+
+        .card-tag {
+            background: var(--light);
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .card p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .price-tag {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--orange);
+            background: #fff3e0;
+            padding: 6px 12px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        /* INFORMACIÓN Y HORARIOS */
+        .info-section {
+            background: var(--light);
+            padding: 3rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .info-box {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary);
+        }
+
+        .info-box h4 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="demo-badge">¡YA ESTAMOS LABORANDO!</div>
+
+    <header>
+        <h1 class="logo">Aguachiles <span>y Tostielotes</span></h1>
+    </header>
+
+    <section class="hero">
+        <h1>"Con el sazón de la casa"</h1>
+        <p>¡Prueba los nuevos Tostiaguachiles y Tosticeviches caseros! Échale lo que quieras según tu preferencia, ¡No dudes en contactarnos y visitarnos! ¡Contamos con servicio a domicilio!</p>
+        <button class="btn-main" onclick="document.getElementById('menu').scrollIntoView({ behavior: 'smooth' })">Ver Especialidades</button>
+    </section>
+
+    <section id="menu">
+        <h2 class="section-title">Especialidades de la Casa</h2>
+        
+        <div class="menu-container">
+            <div class="card">
+                <img src="image_3.jpg" alt="Tostiaguachiles">
+                <div class="card-content">
+                    <span class="card-tag">Botanas</span>
+                    <h3>Tostiaguachiles</h3>
+                    <p>Tostitos salsa verde, Doritos Nacho y Doritos Flamin'Hot, salsa verde o roja.</p>
+                    <div class="price-tag">Precio: $130.00</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="image_1.jpg" alt="Tosticeviches">
+                <div class="card-content">
+                    <span class="card-tag">Botanas</span>
+                    <h3>Tosticeviches</h3>
+                    <p>Tostitos salsa verde, Doritos Nacho y Doritos Flamin'Hot, añadir complementos al gusto.</p>
+                    <div class="price-tag">Precio: $100.00</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <h2 class="section-title">Horarios y Atención</h2>
+        <div class="info-grid">
+            <div class="info-box">
+                <h4>⌚ Horarios de Servicio</h4>
+                <p><strong>Sábados y Domingos a partir de las:</strong></p>
+                <p>12:00 PM - 7:00 PM ⛅🌘</p>
+            </div>
+            <div class="info-box">
+                <h4>📍 Ubicación y Pedidos</h4>
+                <p>Lugar de venta: Comisaría de Caucel (Yucatán)</p>
+                <p>📞 ¡Contáctanos para saber más o hacer pedidos a domicilio!: <strong><a href="https://wa.me/9999188356" target="_blank" style="color: inherit;">9999188356</a></strong></p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Los precios pueden variar según la fecha, cualquier duda contactar al número.</p>
+    </footer>
+
+</body>
+</html>
